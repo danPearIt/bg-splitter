@@ -1,22 +1,27 @@
-**NOTE: I no longer maintain this project. Feel free to fork it if you need to.**
+** NOTE: This project is not maintained. Feel free to fork it if you need to.**
 
-# Angular pane splitter
+# Angular pane splitter with min and max options
 
-Simple pane splitter for angular.js 
+Pane splitter for angular.js based bg-splitter (http://blackgate.github.io/bg-splitter)
 
 ## Sample
 
 HTML:
 ```html
-<bg-splitter orientation="horizontal">
-	<bg-pane min-size="100">Pane 1</bg-pane>
-	<bg-pane min-size="150">
-	  <bg-splitter orientation="vertical">
-	    <bg-pane min-size="50">Pane 2</bg-pane>
-	    <bg-pane min-size="50">Pane 3</bg-pane>
-	  </bg-splitter>
-	</bg-pane>
+
+<bg-splitter class ="panel panel-default" orientation="horizontal" style="margin: inherit">
+  <bg-pane min-size="40" label="Window Top">
+    <bg-splitter orientation="vertical">
+      <bg-pane min-size="40" label="Window Right">Pane 1</bg-pane>
+      <bg-pane min-size="40" label="Window Left">Pane 2</bg-pane>
+    </bg-splitter>
+  </bg-pane>
+  <bg-pane min-size="50" label="Window buttom">
+    <h3 style="margin-left: 20px;">1st graph inner label</h3>
+    <div class="col-md-12">Pane 3</div>
+  </bg-pane>
 </bg-splitter>
+
 ```
 
 Javascript:
@@ -24,11 +29,8 @@ Javascript:
 var app = angular.module('myApp', ['bgDirectives']);
 ```
 
-## Install using bower
+This project is working out of the box with no need bower.
 
-```
-bower install bg-splitter
-```
 
 ## Licence
 
